@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">oneChat</string>
+    <string name="main_title">Transition Button</string>
+    <string name="main_button">login</string>
+    <string name="main_email_hint">Email</string>
+    <string name="main_password_hint">Password</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="username">username</string>
+    <string name="dialog_loading_hint">加载中&#8230;</string>
+
+</resources>
