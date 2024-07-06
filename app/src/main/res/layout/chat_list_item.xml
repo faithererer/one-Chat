@@ -18,6 +18,7 @@
 
     <TextView
         android:id="@+id/textViewName"
+        android:paddingLeft="12sp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Name"
@@ -31,6 +32,7 @@
         android:id="@+id/textViewMessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingLeft="12sp"
         android:text="Message"
         android:textSize="14sp"
         android:textColor="@android:color/darker_gray"
@@ -43,21 +45,29 @@
         android:id="@+id/textViewTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="8:18 PM"
+        android:text="3:18 PM"
         android:textSize="12sp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:id="@+id/textViewUnreadCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="3"
         android:textSize="12sp"
+        android:textColor="@android:color/white"
         android:background="@drawable/bg_unread_count"
         android:padding="4dp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone" />
+        app:layout_constraintTop_toBottomOf="@id/textViewTime"
+        app:layout_constraintEnd_toEndOf="@id/textViewTime"
+        android:layout_marginTop="4dp"
+        android:visibility="visible" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

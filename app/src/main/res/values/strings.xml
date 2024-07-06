@@ -7,7 +7,7 @@
     <string name="profile_image">Profile Image</string>
     <string name="password">password</string>
     <string name="login">login</string>
-    <string name="username">username</string>
+    <string name="username">phone</string>
     <string name="dialog_loading_hint">加载中&#8230;</string>
 
 </resources>

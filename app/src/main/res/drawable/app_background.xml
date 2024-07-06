@@ -1,0 +1,6 @@
+<!-- app_background.xml -->
+<!-- background_drawable.xml -->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/bg_main"
+    android:gravity="fill"
+    android:tileMode="disabled" />

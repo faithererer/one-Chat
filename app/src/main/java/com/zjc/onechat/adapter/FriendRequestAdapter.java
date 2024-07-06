@@ -1,5 +1,6 @@
 package com.zjc.onechat.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.zjc.onechat.R;
 import com.zjc.onechat.entity.FriendRequest;
 
 import java.util.List;
+
+import jp.wasabeef.blurry.Blurry;
 
 public class FriendRequestAdapter extends RecyclerView.Adapter<FriendRequestAdapter.ViewHolder> {
 
@@ -26,7 +31,7 @@ public class FriendRequestAdapter extends RecyclerView.Adapter<FriendRequestAdap
         this.friendRequests = friendRequests;
         this.acceptClickListener = acceptClickListener;
         this.rejectClickListener = rejectClickListener;
-    }
+     }
 
     @NonNull
     @Override
@@ -37,12 +42,22 @@ public class FriendRequestAdapter extends RecyclerView.Adapter<FriendRequestAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        // 创建圆形变换器
+        RequestOptions requestOptions = new RequestOptions()
+                .placeholder(R.drawable.ic_profile) // 默认头像
+                .transform(new CircleCrop()); // 圆形变换
         FriendRequest request = friendRequests.get(position);
         holder.nickNameText.setText(request.getNickName());
-        Glide.with(holder.itemView.getContext()).load(request.getAvatar()).into(holder.avatarImage);
+        Glide.with(holder.itemView.getContext())
+                .load(request.getAvatar())
+                .apply(requestOptions)
+                .into(holder.avatarImage);
 
         holder.acceptButton.setOnClickListener(v -> acceptClickListener.onClick(request));
         holder.rejectButton.setOnClickListener(v -> rejectClickListener.onClick(request));
+
+
+
     }
 
     @Override
@@ -56,9 +71,11 @@ public class FriendRequestAdapter extends RecyclerView.Adapter<FriendRequestAdap
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView avatarImage;
+
         TextView nickNameText;
         Button acceptButton;
         Button rejectButton;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -66,6 +83,7 @@ public class FriendRequestAdapter extends RecyclerView.Adapter<FriendRequestAdap
             nickNameText = itemView.findViewById(R.id.nick_name_text);
             acceptButton = itemView.findViewById(R.id.accept_button);
             rejectButton = itemView.findViewById(R.id.reject_button);
+
         }
     }
 }

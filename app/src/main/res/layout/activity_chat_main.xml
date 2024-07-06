@@ -1,0 +1,75 @@
+<!-- res/layout/activity_chat_main.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_chat"
+    tools:context=".activity.ChatActivity">
+
+    <!-- Header for displaying the chat title -->
+    <LinearLayout
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:background="@color/md_theme_primary"
+        android:gravity="center_vertical">
+
+        <!-- 返回图标 -->
+        <ImageView
+            android:id="@+id/chat_ivBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back"
+            android:layout_gravity="center_vertical"/>
+
+        <!-- 标题文字 -->
+        <TextView
+            android:id="@+id/chat_tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:text="Chat Header"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+
+    <com.stfalcon.chatkit.messages.MessagesList
+        android:id="@+id/messagesList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/tvHeader"
+        android:layout_above="@id/messageInput_"
+
+        app:incomingDefaultBubbleColor="@color/pink"
+        android:padding="8dp" />
+    <!-- Placeholder view for blurred background -->
+    <!-- Message Input and Send Button -->
+    <View
+        android:id="@+id/viewBlur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:alpha="0.9"
+        android:background="@android:color/transparent" />
+
+    <com.stfalcon.chatkit.messages.MessageInput
+        android:id="@+id/messageInput_"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:inputHint="在此输出消息"
+        app:showAttachmentButton="true"
+        />
+</RelativeLayout>
