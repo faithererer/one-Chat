@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# 忽略特定的 Java 类文件
+# Ignore specific Java class file
+com/zjc/onechat/aliyunOss/Configs.java

@@ -1,6 +1,9 @@
 package com.zjc.onechat.adapter;
 
 
+ import android.content.Context;
+ import android.content.Intent;
+ import android.util.Log;
  import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
  import com.bumptech.glide.load.resource.bitmap.CircleCrop;
  import com.bumptech.glide.request.RequestOptions;
+ import com.zjc.onechat.activity.ChatActivity;
  import com.zjc.onechat.R;
 import com.zjc.onechat.entity.Friend;
 
@@ -19,10 +23,11 @@ import com.zjc.onechat.entity.Friend;
 
 
 public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder> {
-
+    private Context context;
     private List<Friend> friendsList;
-    public FriendsAdapter(List<Friend> friendsList) {
+    public FriendsAdapter(List<Friend> friendsList, Context context) {
         this.friendsList = friendsList;
+        this.context = context;
     }
 
 
@@ -49,6 +54,18 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
                 .load(friend.getAvatar())
                 .apply(requestOptions)
                 .into(holder.friendAvatar);
+
+        holder.itemView.setOnClickListener(v -> {
+            Log.d("投喂1","aa");
+
+            Log.d("投喂1", friend.getId().toString());
+            Intent intent = new Intent(context, ChatActivity.class);
+            intent.putExtra("friend_name", friend.getNickName());
+            intent.putExtra("friend_id", friend.getId().toString());
+            intent.putExtra("friend_avatar", friend.getAvatar());
+
+            context.startActivity(intent);
+        });
     }
 
     @Override

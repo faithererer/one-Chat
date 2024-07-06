@@ -9,7 +9,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
     <!-- 背景图像 -->
     <ImageView
         android:id="@+id/background_image"
@@ -26,11 +26,11 @@
         android:visibility="gone" /> <!-- 默认不可见 -->
 
     <ImageView
+        android:id="@+id/login_avatar"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:background="@drawable/circle"
         android:src="@drawable/ic_profile"/>
 
     <LinearLayout
@@ -91,7 +91,7 @@
             android:id="@+id/codeInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
+            android:hint="verifyCode"
             android:inputType="textPassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>

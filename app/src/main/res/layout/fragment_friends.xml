@@ -26,11 +26,12 @@
         <!-- 搜索和添加朋友的图标，位于右侧 -->
         <ImageView
             android:id="@+id/search_add_friends"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:src="@drawable/ic_add"
             android:contentDescription="添加朋友"
-            android:padding="2dp"
+            android:padding="3dp"
+            android:layout_marginRight="5dp"
             android:layout_gravity="end|center_vertical"/>
 
     </androidx.appcompat.widget.Toolbar>

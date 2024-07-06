@@ -1,5 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval">
-    <stroke android:width="5dp" android:color="#ffff0000"/>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<shape    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:shape="oval">-->
+<!--    <stroke android:width="5dp" android:color="#ffff0000"/>-->
+<!--</shape>-->
+<!-- bg_circle_shape.xml -->
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:shape="oval">-->
+<!--    <solid android:color="@android:color/darker_gray" /> &lt;!&ndash; 背景填充色 &ndash;&gt;-->
+<!--    <size android:width="50dp" android:height="50dp" /> &lt;!&ndash; 圆形直径 &ndash;&gt;-->
+<!--</shape>-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@android:color/white" /> <!-- 背景填充色，可以设置为透明或者其他颜色 -->
+    <corners android:radius="8dp" /> <!-- 设置圆角半径，这里假设是8dp -->
+<!--    <stroke-->
+<!--        android:width="1dp" android:color="@android:color/darker_gray" /> &lt;!&ndash; 边框颜色 &ndash;&gt;-->
 </shape>
+

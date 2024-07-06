@@ -19,6 +19,10 @@ public class RequestServer implements IRequestServer {
     @NonNull
     @Override
     public String getHost() {
-        return "http://192.168.1.237:8080/";
+        return "http://192.168.85.144:8080/";
     }
+    public static String getWebsocketChatUrl() {
+        return "ws://192.168.85.144:8080/chat";
+    }
+
 }
